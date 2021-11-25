@@ -84,7 +84,7 @@ class Students: public People{
         void setInfor();
         void setID(string id);
         string getID();
-        float GPA(float ma, float ph, float che);
+        float GPA();
         void disInfo();
 };  
 
@@ -105,8 +105,8 @@ string Students::getID(){
     return this->id;
 }
 
-float Students::GPA(float ma, float ph, float che){
-    float avg = (ma + che + ph)/3;
+float Students::GPA(){
+    float avg = (this->math + this->physical + this->chemistry)/3;
     return avg;
 }
 
@@ -127,7 +127,8 @@ void Students::disInfo(){
     cout << "Ma sv: " << this->id << endl 
         << "Toan: " << this->math << endl 
         << "Ly: " << this->physical << endl
-        << "Hoa: " << this->chemistry << endl;
+        << "Hoa: " << this->chemistry << endl
+        << "Diem tb: " << GPA() << endl;
  }
 
 int main(){
