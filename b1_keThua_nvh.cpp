@@ -8,8 +8,8 @@ class People{
         int age;
         string address;
     public: 
-        People();
-        ~People();
+        People();       //ham tao
+        ~People();      //ham huy
         void setName(string name);
         void setAge(int age);
         void setAdd(string add);
@@ -18,7 +18,6 @@ class People{
         string getAdd();
         void disInfo();
         void setInfor();
-        void getInfor();
 };
 
 People::People(){
@@ -56,7 +55,7 @@ string People::getAdd(){
 }
 
 void People::disInfo(){
-    cout << "Thong tin hien thi: \n";
+    cout << "Thong tin ve nguoi: \n";
     cout << "Ten: "<< this->name << endl;
     cout << "Tuoi: "<< this->age << endl;
     cout << "Dia chi: "<< this->address << endl;
@@ -73,9 +72,6 @@ void People::setInfor(){
     fflush(stdin);
     getline(cin, this->address);
 }
-void People::getInfor(){
-
-}
 
 class Students: public People{
     string id;
@@ -86,7 +82,6 @@ class Students: public People{
         Students();
         ~Students();
         void setInfor();
-        void getInfor();
         void setID(string id);
         string getID();
         float GPA(float ma, float ph, float che);
@@ -116,7 +111,7 @@ float Students::GPA(float ma, float ph, float che){
 }
 
 void Students::setInfor(){
-    People::setInfor();
+    People::setInfor();     //nap chong ham
     cout << "Ma sv: ";
     getline(cin, this->id);
     cout << "Toan: ";
